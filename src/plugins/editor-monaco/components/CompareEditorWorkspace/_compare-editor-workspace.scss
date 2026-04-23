@@ -1,0 +1,109 @@
+.swagger-editor {
+  &__compare-editor-workspace {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+  }
+
+  &__compare-editor-workspace-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #D7DCE4;
+    background: #F7F9FC;
+  }
+
+  &__compare-editor-workspace-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: #3B4151;
+  }
+
+  &__compare-editor-workspace-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  &__compare-editor-workspace-subtitle {
+    font-size: 0.8rem;
+    color: #6B7280;
+  }
+
+  &__compare-editor-workspace-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__compare-editor-workspace-legend {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid #D7DCE4;
+    color: #6B7280;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__compare-editor-container {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  &__compare-editor-monaco {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__compare-editor-button {
+    border: 1px solid #4A6CF7;
+    border-radius: 6px;
+    background: #4A6CF7;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__compare-editor-button--secondary {
+    border-color: #C4CBD6;
+    background: #FFFFFF;
+    color: #3B4151;
+  }
+
+  &__compare-editor-validation {
+    border-top: 1px solid #D7DCE4;
+    background: #FFFFFF;
+  }
+
+  @media (max-width: 1200px) {
+    &__compare-editor-workspace-toolbar {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__compare-editor-workspace-actions {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    &__compare-editor-workspace-legend {
+      font-size: 0.7rem;
+    }
+  }
+}

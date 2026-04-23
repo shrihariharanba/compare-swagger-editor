@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Emirates | Fly Better</title>
+    <link rel="preload" href="%PUBLIC_URL%/static/media/splash-screen/logo.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="%PUBLIC_URL%/static/media/splash-screen/styles.css" as="style" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="SwaggerEditor" />
+    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/static/media/splash-screen/styles.css" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script>
+      window.MonacoEnvironment = {
+        baseUrl: new URL('/static/js/', document.baseURI || location.href).toString(),
+      };
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="swagger-editor">
+      <div class="swagger-editor">
+        <div class="swagger-editor__splash-screen">
+          <figure class="swagger-editor__splash-screen-figure">
+            <img width="100%" src="%PUBLIC_URL%/static/media/splash-screen/logo.svg" alt="Emirates API Studio" />
+            <figcaption>%REACT_APP_VERSION%</figcaption>
+            <div
+              class="swagger-editor__splash-screen-spinner"
+              role="status"
+              aria-live="polite"
+              aria-label="Preparing your flight deck"
+            >
+              <span class="swagger-editor__splash-screen-spinner-orbit" aria-hidden="true">
+                <span class="swagger-editor__splash-screen-spinner-ring"></span>
+                <span class="swagger-editor__splash-screen-spinner-core"></span>
+                <span class="swagger-editor__splash-screen-spinner-flight-path">
+                  <span class="swagger-editor__splash-screen-spinner-plane">
+                    <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+                      <path
+                        d="M56.7 29.5 35.4 21.8 26.7 4.4c-.6-1.3-2.4-1.4-3.2-.3l-3.9 6.1c-.6.9-.7 2.1-.4 3.2l3.4 10.1-11.7-4.2-4.7-6.1c-.7-.9-2.2-.8-2.8.2l-1.1 2c-.5.9-.4 2 .2 2.8l4.7 5.5-4.7 5.5c-.7.8-.8 1.9-.2 2.8l1.1 2c.6 1 2.1 1.1 2.8.2l4.7-6.1 11.7-4.2-3.4 10.1c-.4 1.1-.2 2.2.4 3.2l3.9 6.1c.8 1.2 2.6 1 3.2-.3l8.7-17.4 21.3-7.7c1.7-.6 1.7-3 0-3.6Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+              <span class="swagger-editor__splash-screen-spinner-label">Preparing your flight deck</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
