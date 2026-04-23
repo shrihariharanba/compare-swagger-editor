@@ -8,6 +8,12 @@
     .Pane {
       overflow-y: scroll;
       background-color: #FFFFFF;
+      // Keep pane content from painting above the shared split handle.
+      z-index: 0;
+    }
+
+    .Resizer {
+      z-index: 5 !important;
     }
 
     .dropzone {

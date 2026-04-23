@@ -42,4 +42,43 @@ test.describe('Editor Preview Pane: AsyncAPI 2.x', () => {
     await expect(page.locator('#check-out-its-awesome-features')).not.toBeAttached();
     await expect(page.locator('.aui-root #introduction')).not.toBeAttached();
   });
+
+  test('keeps the editor and preview splitter draggable for AsyncAPI examples', async ({
+    page,
+  }) => {
+    await clickNestedMenuItem(page, 'File', 'Load Example', 'AsyncAPI 2.6 Petstore');
+    await waitForContentPropagation(page);
+
+    const resizer = page.locator('.Resizer.vertical').first();
+    await expect(resizer).toBeVisible();
+
+    const getPaneWidths = () =>
+      page
+        .locator('.Pane')
+        .evaluateAll((elements) =>
+          elements.map((element) => element.getBoundingClientRect().width)
+        );
+
+    const beforeWidths = await getPaneWidths();
+    const resizerBox = await resizer.boundingBox();
+
+    expect(resizerBox).not.toBeNull();
+
+    if (!resizerBox) {
+      return;
+    }
+
+    const dragX = resizerBox.x + resizerBox.width / 2;
+    const dragY = resizerBox.y + Math.min(120, resizerBox.height / 2);
+
+    await page.mouse.move(dragX, dragY);
+    await page.mouse.down();
+    await page.mouse.move(dragX + 180, dragY, { steps: 12 });
+    await page.mouse.up();
+
+    const afterWidths = await getPaneWidths();
+
+    expect(afterWidths[0]).toBeGreaterThan(beforeWidths[0] + 100);
+    expect(afterWidths[1]).toBeLessThan(beforeWidths[1] - 100);
+  });
 });
